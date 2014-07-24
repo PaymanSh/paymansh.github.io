@@ -1,0 +1,32 @@
+---
+name: Peyman
+tags:
+  - debug
+  - test
+data:
+  - name: Data Point Name #1
+    description: |
+      A short description of the data point.
+    images:
+      # Stored locally within the website
+      - graph.png
+      # An external image
+      - "https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg"
+      - type: img
+        alt: A Screenshot from a project I am working on to share literature reviews.
+        src: https://www.flickr.com/photos/tonyfast/14466781737
+      # A templated link
+      # name of the template
+      - type: flickr
+        user-id: tonyfast
+        photo-id: 14466781737
+---
+
+{{page.data}}
+
+<hr>
+  <br>
+  "https://www.flickr.com/photos/tonyfast/14466781737"
+  <a href="https://www.flickr.com/photos/tonyfast/14466781737/sizes/l" alt="Get all sizes on Flickr">
+<img height="400px" width="auto" src="https://www.flickr.com/photos/{{page.data[0]['images'][3]['user-id']}}/{{page.data[0]['images'][3]['photo-id']}}" width=100% />
+</a>

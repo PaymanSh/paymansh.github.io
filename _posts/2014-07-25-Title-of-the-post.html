@@ -1,0 +1,35 @@
+---
+name: Peyman
+tags:
+  - debug
+  - test
+data:
+  - name: Data Point Name #1
+    description: |
+      A short description of the data point.
+    images:
+      # Stored locally within the website
+      - graph.png
+      # An external image
+      - "https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg"
+      - type: img
+        alt: A Screenshot from a project I am working on to share literature reviews.
+        src: https://farm4.staticflickr.com/3899/14442235737_177d64f0f8.jpg
+      # A templated link
+      # name of the template
+      - type: flickr
+        farm-id: 4
+        server-id: 3899
+        photo-id: 14466781737
+        secret: 177d64f0f8
+        size: m
+---
+
+{{page.data[0]['images'][3]['farm-id']}}
+
+<hr>
+  <br>
+  "https://farm{{page.data[0]['images'][3]['farm-id']}}.staticflickr.com/{{page.data[0]['images'][3]['server-id']}}/{{page.data[0]['images'][3]['photo-id']}}_{{page.data[0]['images'][3]['secret']}}_{{page.data[0]['images'][3]['size']}}.jpg"
+  <a href="https://www.flickr.com/photos/123578762@N06/14442235737/sizes/l" alt="Get all sizes on Flickr">
+<img height="400px" width="auto" src="https://farm{{page.data[0]['images'][3]['farm-id']}}.staticflickr.com/{{page.data[0]['images'][3]['server-id']}}/{{page.data[0]['images'][3]['photo-id']}}_{{page.data[0]['images'][3]['secret']}}_{{page.data[0]['images'][3]['size']}}.jpg" width=100% />
+</a>
