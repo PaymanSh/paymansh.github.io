@@ -19,19 +19,10 @@ data:
       # name of the template
       - type: flickr
         farm-id: 4
-        server-id: 3899
+        server-id:
         photo-id: 14442235737
         secret: 177d64f0f8
         size: m
 ---
 
-{% if {{page.data[0]['images'][3]['server-id']}} == 3899 %}
-  <hr>
-    <br>
-    "https://farm{{page.data[0]['images'][3]['farm-id']}}.staticflickr.com/{{page.data[0]['images'][3]['server-id']}}/{{page.data[0]['images'][3]['photo-id']}}_{{page.data[0]['images'][3]['secret']}}_{{page.data[0]['images'][3]['size']}}.jpg"
-    <a href="https://www.flickr.com/photos/123578762@N06/14442235737/sizes/l" alt="Get all sizes on Flickr">
-      <img height="400px" width="auto" src="https://farm{{page.data[0]['images'][3]['farm-id']}}.staticflickr.com/{{page.data[0]['images'][3]['server-id']}}/{{page.data[0]['images'][3]['photo-id']}}_{{page.data[0]['images'][3]['secret']}}_{{page.data[0]['images'][3]['size']}}.jpg" width=100% />
-    </a>
-{% elsif page.data[0]['images'][3]['server-id'] != null %}
-  Find the 4 digits and secret and photo id
-{% endif %}
+{% include flickr.html param = image %}

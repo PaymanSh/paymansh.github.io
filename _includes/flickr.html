@@ -1,7 +1,12 @@
-<hr>
-{{include}}
-  <br>
-  "https://farm{{include.image['farm-id']}}.staticflickr.com/{{include.image['server-id']}}/{{include.image['photo-id']}}_{{include.image['secret']}}_{{include.image['size']}}.jpg"
-  <a href="https://www.flickr.com/photos/123578762@N06/14442235737/sizes/l" alt="Get all sizes on Flickr">
-<img src="https://farm{{include.image['farm-id']}}.staticflickr.com/{{include.image['server-id']}}/{{include.image['photo-id']}}_{{include.image['secret']}}_{{include.image['size']}}.jpg" width=100% />
-</a>
+{% if page.data[0]['images'][3]['server-id'] %}
+    <hr>
+          <br>
+            "https://farm{{include.image['farm-id']}}.staticflickr.com/{{include.image['server-id']}}/{{page.data[0]['images'][3]['photo-id']}}_{{page.data[0]['images'][3]['secret']}}_{{page.data[0]['images'][3]['size']}}.jpg"
+            <a href="https://www.flickr.com/photos/123578762@N06/14442235737/sizes/l" alt="Get all sizes on Flickr">
+              <img height="400px" width="auto" src="https://farm{{page.data[0]['images'][3]['farm-id']}}.staticflickr.com/{{page.data[0]['images'][3]['server-id']}}/{{page.data[0]['images'][3]['photo-id']}}_{{page.data[0]['images'][3]['secret']}}_{{page.data[0]['images'][3]['size']}}.jpg" width=100% />
+            </a>
+{% else %}
+      <a href="https://www.flickr.com/photos/123578762@N06/14442235737/sizes/l">
+        Find the 4 digits and secret and photo id
+      </a>
+{% endif %}
